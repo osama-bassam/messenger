@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.securemessengerapp2">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_logo"
+        android:label="Cryvora "
+        android:roundIcon="@drawable/app_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SecureMessengerApp2">
+
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/activity_login" />
+
+    </application>
+
+</manifest>

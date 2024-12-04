@@ -1,0 +1,16 @@
+i wanna create android application  using android studio , java , xml 
+the application idea is :
+message app , there is only username and its not necessary to be your real name ,
+ its just used to find you whaen somebody search with it , anyone can text you if
+ he have ur user name , this is the only way to meassage u by this app  (security reasons) ,
+ once the message arrived to the other side (user) and once the user road it it will disappear
+ after a period of time (it depends on message size) to ensure when finish reading it, it will
+ disappear , message content cant be shown in notifications , user have to click on it to read it ,
+ users can send text and photos and videos and all disappear after watch it , when user get out
+ from the app every thing will be deleted except usernames for who's contact with u
+ (only usernames names without content) , users have the choice to delete even usernames 
+who's talk with , but a pop-out alert will notify that they have to save the username in
+ their mind ,users names have to be unique , ill chose the notification icont and other 
+icons , ,,,,,,,,,,,,,,,,,,,write a documentation for this project ,, add a steps that u
+ see its good or remove the bad details , make the project a life , add a value to it , 
+the result in word file plese
