@@ -14,3 +14,17 @@ who's talk with , but a pop-out alert will notify that they have to save the use
 icons , ,,,,,,,,,,,,,,,,,,,write a documentation for this project ,, add a steps that u
  see its good or remove the bad details , make the project a life , add a value to it , 
 the result in word file plese
+
+
+
+
+
+
+i deelted all projects files except the icon , and the firebase is linked as u see,
+ i wanna start from zero again , lets start step by step with the UI , lets make a
+ login and signup buttons with username and password fields , when signup , the data
+ will go to the firebase, (u will implement how) and when sign in , the app will search 
+for the usename entered in the database and will return if enter or not (to the app) 
+when enter the app , a chat list will be displayed , at the first time and before any chat
+ , an empty chat bar will be shown , a search box for find friends by their user name will 
+be there , to add the first friend , this is initally 

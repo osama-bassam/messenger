@@ -4,12 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/drawable/message_background.xml" value="0.113" />
         <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/layout/activity_chat.xml" value="0.1" />
         <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/layout/activity_chat_list.xml" value="0.1546875" />
+        <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/layout/activity_chat_window.xml" value="0.14114583333333333" />
         <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/layout/activity_signup.xml" value="0.1" />
+        <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/layout/chat_item.xml" value="0.1015625" />
         <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/layout/friend_item.xml" value="0.1546875" />
         <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/layout/item_friend.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/layout/item_message.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/layout/user_profile.xml" value="0.1" />
+        <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/menu/nav_menu.xml" value="0.12395833333333334" />
+        <entry key="..\:/Users/obass/Desktop/SecureMessengerApp2/app/src/main/res/xml/activity_login.xml" value="0.1015625" />
       </map>
     </option>
   </component>
