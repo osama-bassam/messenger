@@ -2,7 +2,6 @@ package com.example.securemessengerapp2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +29,9 @@ public class UserProfileActivity extends AppCompatActivity {
             Intent intent = new Intent(UserProfileActivity.this, ChatWindowActivity.class);
             intent.putExtra("recipientUsername", userName);  // Pass username for chat
             startActivity(intent);
+
+
         });
+
     }
 }

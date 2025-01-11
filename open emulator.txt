@@ -1,1 +1,2 @@
-emulator -avd Pixel_5_API_35 -scale 1.5 -no-snapshot-load 
+emulator -avd 13.5_Freeform_API_35 -scale 1.5 -no-snapshot-load
+emulator -avd Nexus_5X_API_30 -scale 1.5 -no-snapshot-load

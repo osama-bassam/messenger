@@ -9,24 +9,19 @@
         android:roundIcon="@drawable/app_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecureMessengerApp2">
-
         <!-- MainActivity should be the launcher activity with android:exported explicitly set -->
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Declare ChatActivity -->
-        <activity android:name=".ChatActivity"
-            android:exported="true">
-            <!-- Add any relevant intent filters or metadata if needed -->
-        </activity>
+        </activity> <!-- Declare ChatActivity -->
         <activity android:name=".ChatWindowActivity" />
         <activity android:name=".UserProfileActivity" />
-
+        <activity android:name=".ChatActivity" />
     </application>
 
 </manifest>

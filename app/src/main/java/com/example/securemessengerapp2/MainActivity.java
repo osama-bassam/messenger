@@ -1,6 +1,9 @@
 package com.example.securemessengerapp2;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import android.content.Intent;
@@ -44,24 +47,31 @@ public class MainActivity extends AppCompatActivity {
             showLoginScreen();
         }
 
-        // Sign Up Button functionality
         signUpButton.setOnClickListener(v -> {
             String username = usernameInput.getText().toString().trim();
             String password = passwordInput.getText().toString().trim();
-
+            FirebaseAuth auth = FirebaseAuth.getInstance();
+            FirebaseUser user = auth.getCurrentUser();
             if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(MainActivity.this, "Please enter both username and password", Toast.LENGTH_SHORT).show();
             } else {
                 // Check if the username exists in Firebase
-                databaseReference.child(username).get().addOnCompleteListener(task -> {
+                DatabaseReference userRef = databaseReference.child(username);
+                userRef.get().addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         if (task.getResult().exists()) {
                             // If username exists, show an error
                             Toast.makeText(MainActivity.this, "Username already exists!", Toast.LENGTH_SHORT).show();
                         } else {
+                            String chatsNodeName = username + "_chats"; // Create the dynamic node name
                             // If username doesn't exist, create a new entry in the database
-                            databaseReference.child(username).child("password").setValue(password)
+                            // Set username and password
+                            userRef.child("password").setValue(password)
                                     .addOnSuccessListener(aVoid -> {
+                                        // Create empty "username_chats" node for the user
+                                        userRef.child(chatsNodeName).setValue(null); // Empty node to store chats
+
+                                        // Show success message
                                         Toast.makeText(MainActivity.this, "Sign-Up successful! Please log in.", Toast.LENGTH_SHORT).show();
                                     })
                                     .addOnFailureListener(e -> {
@@ -72,9 +82,12 @@ public class MainActivity extends AppCompatActivity {
                         // Handle the error if something goes wrong
                         Toast.makeText(MainActivity.this, "Error checking username", Toast.LENGTH_SHORT).show();
                     }
+
                 });
             }
+
         });
+
 
         // Login Button functionality
         loginButton.setOnClickListener(v -> {
@@ -91,10 +104,10 @@ public class MainActivity extends AppCompatActivity {
                         if (savedPassword != null && savedPassword.equals(password)) {
                             Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
 
-                            // Save the username to SharedPreferences for auto-login next time
+                            // Save the username and login status to SharedPreferences for auto-login
                             saveLoginInfo(username);
 
-                            // Navigate to ChatActivity
+                            // Navigate to ChatActivity (or next screen)
                             navigateToChatActivity(username);
                         } else {
                             Toast.makeText(MainActivity.this, "Incorrect password!", Toast.LENGTH_SHORT).show();
@@ -105,14 +118,17 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+
     }
 
     private void saveLoginInfo(String username) {
         SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("username", username);  // Save the username
+        editor.putBoolean("isLoggedIn", true);    // Set login flag to true
         editor.apply();  // Apply the changes
     }
+
 
     private String getSavedUsername() {
         SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
